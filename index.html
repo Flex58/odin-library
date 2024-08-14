@@ -15,19 +15,22 @@
         </div>
 
         <div class="header-right">
-            <button>Add Book</button>
+            <button id="open">Add Book</button>
             <dialog>
+                <button id="close">x</button>
                 <legend>Add a new Book</legend>
-                <form action="">
-                    <button>x</button>
-                    <label for="title">Title</label>
-                    <input id="title" name="title" type="text">
+                <form id="book-form" action="">
+                    <label for="title" aria-required="true">Title</label>
+                    <input id="title" name="title" type="text" required>
                     
-                    <label for="author">Author</label>
-                    <input id="author" name="author" type="text">
+                    <label for="author" aria-required="true">Author</label>
+                    <input id="author" name="author" type="text" required>
                     
-                    <label for="pages">Pages</label>
-                    <input id="pages" name="pages" type="number" placeholder="amount">
+                    <label for="pages" aria-required="true">Pages</label>
+                    <input id="pages" name="pages" type="number" placeholder="amount" required>
+                    
+                    <label for="read">Read?</label>
+                    <input type="checkbox" name="read" id="read">
 
                     <button type="submit">Add Book</button>
                 </form>
