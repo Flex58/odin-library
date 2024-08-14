@@ -5,7 +5,6 @@ const openBtn = document.querySelector("#open");
 const closeBtn = document.querySelector("#close");
 
 let books = [];
-let shownBooks = 0;
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -41,18 +40,48 @@ function displayBooks(books) {
     const author = document.createElement("p");
     const pages = document.createElement("p");
     const read = document.createElement("p");
+    const deleteBtn = document.createElement("button");
+    const switchBtn = document.createElement("button");
     
-    title.textContent = "Title: " + books[shownBooks].title;
-    author.textContent = "Author: " + books[shownBooks].author;
-    pages.textContent = `Pages: ${books[shownBooks].pages}`;
-    read.textContent = `Read:  ${books[shownBooks].read}`;
-    shownBooks++;
-    div.appendChild(title);
-    div.appendChild(author);
-    div.appendChild(pages);
-    div.appendChild(read);
+    for (i in books) {
+        
+        title.textContent = "Title: " + books[i].title;
+        author.textContent = "Author: " + books[i].author;
+        pages.textContent = `Pages: ${books[i].pages}`;
+        deleteBtn.textContent = "Delete";
+        deleteBtn.value = i;
+        switchBtn.textContent ="Read";
+        if (books[i].read) {
+            switchBtn.style.backgroundColor = "green"
+        }
+        else {
+            switchBtn.style.backgroundColor = "red"
+        }
+        div.setAttribute("id", i)
 
+        div.appendChild(title);
+        div.appendChild(author);
+        div.appendChild(pages);
+        div.appendChild(read);
+        div.appendChild(switchBtn);
+        div.appendChild(deleteBtn);
+
+        
+    }
     main.appendChild(div)
+    
+    deleteBtn.addEventListener("click", () => {
+        deleteBtn.parentElement.remove();
+    }) 
+
+    switchBtn.addEventListener("click", () => {
+        if (books[switchBtn.parentElement.id].read) {
+            books[switchBtn.parentElement.id].read = false;
+            switchBtn.style.backgroundColor = "red"
+        }
+        else {
+            books[switchBtn.parentElement.id].read = true;
+            switchBtn.style.backgroundColor = "green"
+        }
+    })
 }
-
-
