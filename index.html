@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="header">
+        <div class="header-left">
+            <img src="" alt="Book Logo">
+            <h1>My Library</h1>
+        </div>
+
+        <div class="header-right">
+            <button>Add Book</button>
+            <dialog>
+                <legend>Add a new Book</legend>
+                <form action="">
+                    <button>x</button>
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text">
+                    
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text">
+                    
+                    <label for="pages">Pages</label>
+                    <input id="pages" name="pages" type="number" placeholder="amount">
+
+                    <button type="submit">Add Book</button>
+                </form>
+            </dialog>
+        </div>
+    </div>
+
+    <div class="main">
+
+    </div>
 </body>
 </html>

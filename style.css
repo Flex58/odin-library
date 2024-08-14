@@ -1,7 +1,31 @@
-html {
-    height: 100vh;
+* {
+    box-sizing: border-box;
+    margin: 0;
 }
 
 body {
-    height: 100%;
+    display: grid;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: red;
+}
+
+.header-left {
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.header-right {
+    grid-column: 2/3;
+}
+
+.main {
+    background-color: blue;
 }
