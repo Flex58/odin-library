@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/RobotoSlab-VariableFont_wght.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal; 
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +12,8 @@
 
 body {
     display: grid;
+    background-color: #fef3c7;
+    font-family: "Roboto";
 }
 
 .header {
@@ -12,7 +21,8 @@ body {
     grid-template-columns: 2fr 1fr;
     align-items: center;
     justify-items: center;
-    background-color: red;
+    background-color: #b45309;
+    padding: 0.5rem 0px;
 }
 
 .header-left {
@@ -27,22 +37,27 @@ body {
 }
 
 .main {
-    background-color: blue;
+    background-color: #fef3c7;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
     padding: 30px;
+    box-shadow: inset 0px 5px 4px 0px #78350F;
+}
+
+button {
+    font-family: "Roboto";
 }
 
 .card {
-    background-color: #f5f3ff;
+    background-color: #fffefa;
     color: black;
     text-align: left;
     height: 250px;
     border-radius: 0.5rem;
     padding-left: 2rem;
     
-    box-shadow: inset 10px 0px 0px -1px #ac3b27, 2px 4px 7px -1px #5B21B6;
+    box-shadow: inset 10px 0px 0px -1px #3730a3, 2px 4px 7px -1px #78350F;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-auto-rows: max-content;
@@ -76,5 +91,12 @@ body {
     justify-self: end;
     aspect-ratio: 1/1;
     border-radius: 0.5rem;
-    background-color: #f5f3ff;
+    background-color: #fffefa;
+    border: none;
+}
+
+.card button:last-of-type:hover {
+    border: solid 1px gray;
+    cursor: pointer;
+    box-shadow: inset;
 }

@@ -50,12 +50,13 @@ function displayBooks(books) {
         pages.textContent = `Pages: ${books[i].pages}`;
         deleteBtn.textContent = "X";
         deleteBtn.value = i;
-        switchBtn.textContent ="Read";
         if (books[i].read) {
-            switchBtn.style.backgroundColor = "green"
+            switchBtn.style.backgroundColor = "#16a34a"
+            switchBtn.textContent ="Read";
         }
         else {
-            switchBtn.style.backgroundColor = "red"
+            switchBtn.style.backgroundColor = "#ef4444"
+            switchBtn.textContent ="Not Read";
         }
         div.setAttribute("id", i)
 
@@ -77,11 +78,13 @@ function displayBooks(books) {
     switchBtn.addEventListener("click", () => {
         if (books[switchBtn.parentElement.id].read) {
             books[switchBtn.parentElement.id].read = false;
-            switchBtn.style.backgroundColor = "red"
+            switchBtn.style.backgroundColor = "#ef4444"
+            switchBtn.textContent ="Not Read";
         }
         else {
             books[switchBtn.parentElement.id].read = true;
-            switchBtn.style.backgroundColor = "green"
+            switchBtn.style.backgroundColor = "#16a34a"
+            switchBtn.textContent ="Read";
         }
     })
 }
