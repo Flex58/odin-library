@@ -10,29 +10,30 @@
 <body>
     <div class="header">
         <div class="header-left">
-            <img src="" alt="Book Logo">
             <h1>My Library</h1>
+            <img src="./assets/library.svg" alt="Book Logo">
         </div>
 
         <div class="header-right">
-            <button id="open">Add Book</button>
-            <dialog>
-                <button id="close">x</button>
-                <legend>Add a new Book</legend>
-                <form id="book-form" action="" method="post">
-                    <label for="title" aria-required="true">Title</label>
-                    <input id="title" name="title" type="text" required>
+            <button id="open"><img src="./assets/book-plus-outline.svg" alt=""></button>
+            <dialog close>
+                <div>
+                    <button id="close">X</button>
+                    <legend>Add a new Book</legend>
+                    <form id="book-form" action="" method="post">
+                        <label for="title" aria-required="true">Title</label>
+                        <input id="title" name="title" type="text" required>
                     
-                    <label for="author" aria-required="true">Author</label>
-                    <input id="author" name="author" type="text" required>
+                        <label for="author" aria-required="true">Author</label>
+                        <input id="author" name="author" type="text" required>
                     
-                    <label for="pages" aria-required="true">Pages</label>
-                    <input id="pages" name="pages" type="number" placeholder="amount" required>
+                        <label for="pages" aria-required="true">Pages</label>
+                        <input id="pages" name="pages" type="number" placeholder="amount" required>
                     
-                    <label for="read">Read?</label>
-                    <input type="checkbox" name="read" id="read">
-
-                    <button type="submit">Add Book</button>
+                        <label for="read">Read?</label>
+                        <input type="checkbox" name="read" id="read">
+                        <button type="submit">Add Book</button>
+                </div>
                 </form>
             </dialog>
         </div>

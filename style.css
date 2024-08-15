@@ -20,7 +20,7 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
-    justify-items: center;
+    justify-items: end;
     background-color: #475569;
     color: #f8fafc;
     padding: 0.5rem 0px;
@@ -31,10 +31,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 10px;
+    
 }
 
 .header-right {
     grid-column: 2/3;
+    padding-right: 4rem;
+}
+
+.header-right>button {
+    background-color: #475569;
+    border: none;
+    padding: 0px 0px;
+    width: 100px;
+}
+
+.header-right>button:hover {
+    cursor: pointer;
 }
 
 .main {
@@ -51,7 +65,7 @@ button {
 }
 
 .card {
-    background-color: #fffefa;
+    background-color: #f8fafc;
     color: #020617;
     text-align: left;
     height: 250px;
@@ -85,19 +99,94 @@ button {
     border-radius: 10px;
 }
 
+.card button:first-of-type:hover {
+    cursor: pointer;
+}
+
 .card button:last-of-type {
-    grid-column: 2/3;
     grid-row: 1/2;
+}
+
+.card button:last-of-type,
+dialog>div>button:first-of-type {
+    grid-column: 2/3;
     width: 30%;
     justify-self: end;
     aspect-ratio: 1/1;
     border-radius: 0.5rem;
-    background-color: #fffefa;
+    background-color: #f8fafc;
     border: none;
 }
 
-.card button:last-of-type:hover {
-    border: solid 1px gray;
+.card button:last-of-type:hover,
+dialog>div>button:hover {
+    border: solid 1px #94a3b8;
     cursor: pointer;
     box-shadow: inset;
+}
+img {
+    width: clamp(40px, 50%, 60px);
+    filter: invert(88%) sepia(1%) saturate(3209%) hue-rotate(204deg) brightness(107%) contrast(106%);
+}
+
+.header-left h1 {
+    justify-self: end;
+}
+
+dialog {
+    border-radius: 20px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    background-color:#f8fafc;
+}
+
+dialog div{
+    padding-left: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+form button {
+    grid-column: 2/3;
+    border-radius: 5px;
+    border: solid 1px #94a3b8;
+    background-color: #f8fafc;
+    padding: .4rem 0px;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    box-shadow: inset 0px 0px 5px 0px #94A3B8;
+}
+
+dialog  form {
+    padding: 1rem;
+    grid-column: 1/2;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+
+form input[type=checkbox] {
+    justify-self: start;
+    aspect-ratio: 1/1;
+    width: 10%;
+}
+
+form input {
+    background-color: #f8fafc;
+    border-radius: 5px;
+    border: solid 1px #94a3b8;
+}
+
+dialog legend {
+    grid-column: 1/2;
+    justify-self: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-top: 1rem;
 }
