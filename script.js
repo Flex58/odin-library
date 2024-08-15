@@ -45,10 +45,10 @@ function displayBooks(books) {
     
     for (i in books) {
         
-        title.textContent = "Title: " + books[i].title;
+        title.textContent = books[i].title[0].toUpperCase() + books[i].title.slice(1);
         author.textContent = "Author: " + books[i].author;
         pages.textContent = `Pages: ${books[i].pages}`;
-        deleteBtn.textContent = "Delete";
+        deleteBtn.textContent = "X";
         deleteBtn.value = i;
         switchBtn.textContent ="Read";
         if (books[i].read) {
