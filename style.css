@@ -183,6 +183,18 @@ form input {
     border: solid 1px #94a3b8;
 }
 
+form input:invalid {
+    border: solid 1px black;
+    background-color: red;
+    color: white;
+}
+
+form input:valid {
+    border: solid 1px black;
+    background-color: green;
+    color: white;
+}
+
 dialog legend {
     grid-column: 1/2;
     justify-self: center;

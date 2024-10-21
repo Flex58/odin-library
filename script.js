@@ -1,5 +1,6 @@
 const main = document.querySelector(".main");
 const form = document.querySelector("#book-form");
+const inputs = document.querySelectorAll("input")
 const dialog = document.querySelector("dialog");
 const openBtn = document.querySelector("#open");
 const closeBtn = document.querySelector("#close");
@@ -23,15 +24,49 @@ closeBtn.addEventListener("click", () => {
     dialog.close();
 })
 
+inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        if (input.validity.valueMissing) {
+            input.setCustomValidity("Please fill out this field")
+            input.reportValidity()
+        }
+        else {
+            input.setCustomValidity("")
+            input.reportValidity()
+        }
+    })
+})
+
 form.addEventListener("submit", (e) => {
     e.preventDefault(); 
-    dialog.close();
-
-    const book = new Book(form.elements["title"].value, form.elements["author"].value,
-                          form.elements["pages"].value, form.elements["read"].checked);
     
-    books.push(book)
-    displayBooks(books)
+    if (form.elements["title"].validity.valueMissing || form.elements["author"].validity.valueMissing|| form.elements["pages"].validity.valueMissing) {
+        for (let i = 0; i < form.elements.length - 1; i++) {
+            if (form.elements[i].validity.valueMissing) {
+                form.elements[i].setCustomValidity("Please fill out this field")
+                form.elements[i].reportValidity()
+            }
+            else {
+                form.elements[i].setCustomValidity("")
+                form.elements[i].reportValidity()
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < form.elements.length - 1; i++) {
+            form.elements[i].setCustomValidity("")
+        }
+        dialog.close();
+
+        const book = new Book(form.elements["title"].value, form.elements["author"].value,
+                          form.elements["pages"].value, form.elements["read"].checked);
+        
+        
+        books.push(book)
+        displayBooks(books)
+    }
+    
+    
 })
 
 function displayBooks(books) {
